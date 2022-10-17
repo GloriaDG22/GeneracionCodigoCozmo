@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="workflow" nsURI="http://www.RoboTaskFlow.org/workflow" nsPrefix="workflow">
+  <eAnnotations source="gmf"/>
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="catalogue" value="Catalogue.ecore#/"/>
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Workflow">
+    <eAnnotations source="gmf.diagram"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Workflow_have_one_and_only_one_initial_task Workflow_have_one_or_more_final_task"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Workflow_have_one_and_only_one_initial_task" value="self.tasks->selectByType (Initial)->size()=1"/>
+      <details key="Workflow_have_one_or_more_final_task" value="self.tasks->selectByType (Final)->size()>=1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" lowerBound="3" upperBound="-1"
+        eType="#//Task" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" lowerBound="2" upperBound="-1"
+        eType="#//Link" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" eType="#//Link"
+        eOpposite="#//Link/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" eType="#//Link"
+        eOpposite="#//Link/target"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Link">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="source"/>
+      <details key="target" value="target"/>
+      <details key="target.decoration" value="arrow"/>
+      <details key="color" value="0,0,0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Task" eOpposite="#//Task/outgoing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Task" eOpposite="#//Task/incoming"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//Task">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="size" value="130,70"/>
+      <details key="border.color" value="0,0,0"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Activities_have_one_and_only_one_input_link Activities_have_one_and_only_one_output_link"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Activities_have_one_and_only_one_input_link" value="self.incoming->size() = 1"/>
+      <details key="Activities_have_one_and_only_one_output_link" value="self.outgoing->size() = 1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Parameter" containment="true">
+      <eAnnotations source="gmf.affixed"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="taskDefinition" lowerBound="1"
+        eType="ecore:EClass Catalogue.ecore#//TaskDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name, value"/>
+      <details key="label.pattern" value="{0}: {1}"/>
+      <details key="label.icon" value="false"/>
+      <details key="size" value="130,30"/>
+      <details key="color" value="144,187,180"/>
+      <details key="border.color" value="0,0,0"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Parameter_must_be_linked_to_a_parameterDefinition_of_the_task_definition integer_value_required boolean_value_required"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Parameter_must_be_linked_to_a_parameterDefinition_of_the_task_definition"
+          value="&#xA;&#x9;&#x9;&#x9;self.paramDefinition.oclContainer() = self.oclContainer().oclAsType(Activity).taskDefinition"/>
+      <details key="integer_value_required" value="&#xA;&#x9;&#x9;self.paramDefinition.type=catalogue::ParameterType::NUMBER implies &#xA;&#x9;&#x9;&#x9;not self.value.toInteger().oclIsInvalid()"/>
+      <details key="boolean_value_required" value="&#xA;&#x9;&#x9;&#x9;self.paramDefinition.type=catalogue::ParameterType::BOOLEAN implies &#xA;&#x9;&#x9;&#x9;&#x9;self.value.toUpper()='TRUE' or&#xA;&#x9;&#x9;&#x9;&#x9;self.value.toUpper()='FALSE' or&#xA;&#x9;&#x9;&#x9;&#x9;self.value.toUpper()='VERDADERO' or&#xA;&#x9;&#x9;&#x9;&#x9;self.value.toUpper()='FALSO'"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paramDefinition" lowerBound="1"
+        eType="ecore:EClass Catalogue.ecore#//ParameterDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Initial" eSuperTypes="#//Task">
+    <eAnnotations source="gmf.node">
+      <details key="label.placement" value="none"/>
+      <details key="label.icon" value="false"/>
+      <details key="size" value="70,70"/>
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/RoboTaskFlow/images/Initial.svg"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="One_and_only_one_output_link"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="One_and_only_one_output_link" value="self.incoming->size() = 0 and self.outgoing->size() = 1"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Final" eSuperTypes="#//Task">
+    <eAnnotations source="gmf.node">
+      <details key="label.placement" value="none"/>
+      <details key="label.icon" value="false"/>
+      <details key="size" value="70,70"/>
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/RoboTaskFlow/images/Final.svg"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="One_and_only_one_input_link"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="One_and_only_one_input_link" value="self.outgoing->size() = 0 and self.incoming->size() = 1"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Question" eSuperTypes="#//Task">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="question"/>
+      <details key="label.icon" value="true"/>
+      <details key="color" value="227,198,244"/>
+      <details key="border.color" value="0,0,0"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="One_and_only_one_input_link"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="One_and_only_one_input_link" value="self.outgoing->size() = 0 and self.incoming->size() = 1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="question" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="answers" lowerBound="2"
+        upperBound="-1" eType="#//Answer" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="true"/>
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Answer" eSuperTypes="#//Task">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="answer"/>
+      <details key="label.pattern" value="- {0}"/>
+      <details key="label.icon" value="false"/>
+      <details key="color" value="227,198,244"/>
+      <details key="border.color" value="0,0,0"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Answers_must_belong_to_Question One_and_only_one_output_link"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Answers_must_belong_to_Question" value="self.oclContainer().oclIsTypeOf(Question)"/>
+      <details key="One_and_only_one_output_link" value="self.incoming->size() = 0 and self.outgoing->size() = 1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="answer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="#//Task #//Workflow">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name, type"/>
+      <details key="label.pattern" value="{0}: {1}"/>
+      <details key="label.icon" value="true"/>
+      <details key="color" value="236,255,244"/>
+      <details key="border.color" value="0,0,0"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Loops_have_one_and_only_one_input_link Loops_have_one_and_only_one_output_link Counter_Based_Loops_must_have_numIterations_greater_than_1"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Loops_have_one_and_only_one_input_link" value="self.incoming->size() = 1"/>
+      <details key="Loops_have_one_and_only_one_output_link" value="self.outgoing->size() = 1"/>
+      <details key="Counter_Based_Loops_must_have_numIterations_greater_than_1" value="&#xA;&#x9;&#x9;&#x9;self.type=LoopType::COUNTER_BASED implies numIterations>1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//LoopType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numIterations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LoopType">
+    <eLiterals name="WHILE"/>
+    <eLiterals name="DO_WHILE" value="1"/>
+    <eLiterals name="COUNTER_BASED" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="catalogue">
+  <figures name="Default">
+    <descriptors name="SimpleTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SimpleTaskFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        <preferredSize dx="130" dy="70"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="SimpleTaskLabelFigure" text="SimpleTask"/>
+      </actualFigure>
+      <accessors accessor="getFigureSimpleTaskLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ComplexTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ComplexTaskFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="200" green="200" blue="200"/>
+        <preferredSize dx="170" dy="70"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ComplexTaskLabelFigure" text="ComplexTask"/>
+      </actualFigure>
+      <accessors accessor="getFigureComplexTaskLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ParameterDefinitionFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ParameterDefinitionFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="144" green="187" blue="180"/>
+        <preferredSize dx="120" dy="30"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ParameterDefinitionLabelFigure" text="ParameterDefinition"/>
+      </actualFigure>
+      <accessors accessor="getFigureParameterDefinitionLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes name="SimpleTask" figure="SimpleTaskFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="130" dy="70"/>
+    </facets>
+  </nodes>
+  <nodes name="ComplexTask" figure="ComplexTaskFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="170" dy="70"/>
+    </facets>
+  </nodes>
+  <nodes name="ParameterDefinition" figure="ParameterDefinitionFigure" affixedParentSide="NORTH">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="120" dy="30"/>
+    </facets>
+  </nodes>
+  <labels name="SimpleTaskLabel" figure="SimpleTaskFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ComplexTaskLabel" figure="ComplexTaskFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="ParameterDefinitionLabel" figure="ParameterDefinitionFigure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+</gmfgraph:Canvas>

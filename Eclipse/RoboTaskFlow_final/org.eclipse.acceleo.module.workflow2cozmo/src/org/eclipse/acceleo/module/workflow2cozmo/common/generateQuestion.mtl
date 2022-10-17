@@ -1,0 +1,37 @@
+[comment encoding = UTF-8 /]
+[module generateQuestion('http://www.RoboTaskFlow.org/workflow', 'http://www.RoboTaskFlow.org/catalogue')]
+
+[import org::eclipse::acceleo::module::workflow2cozmo::common::generateTipoTarea/]
+[import org::eclipse::acceleo::module::workflow2cozmo::common::generateParametersQuestion/]
+
+[template public generateQuestion(aQuestion : Question)]
+    '''------------------------[aQuestion.question/] - QUESTION------------------------------'''
+[comment WHILE/] 
+    text_label = "[aQuestion.question/]"
+
+    ventanaQ=tk.Tk()
+    #set center screen window with following coordination
+    MyLeftPos = (ventanaQ.winfo_screenwidth() - 400) / 2
+    myTopPos = (ventanaQ.winfo_screenheight() - 400) / 2
+    ventanaQ.geometry( "%dx%d+%d+%d" % (400, 400, MyLeftPos, myTopPos))
+
+    ventanaQ.title("Interfaz Cozmo") 
+
+    lbl = tk.Label(ventanaQ, text=text_label, font=("Arial Bold", 14))
+    lbl.pack(pady=15)
+
+[for(anAnswer:Answer | aQuestion.answers)]
+    answer[i/] = "[anAnswer.answer/]"
+    boton[i/]=tk.Button(ventanaQ, text=answer[i/], bg="#82c9dd", width = 9, font = ("Bold"),
+            command=lambda: action[i/](ventanaQ[generateParametersQuestion(anAnswer.outgoing.target)/]))
+    boton[i/].pack(pady=10)
+[/for]
+    ventanaQ.mainloop()
+
+[for(anAnswer:Answer | aQuestion.answers)]
+def action[i/](ventanaQ[generateParametersQuestion(anAnswer.outgoing.target)/]):
+[generateTipoTarea(anAnswer.outgoing.target)/]
+    ventanaQ.quit()
+
+[/for]
+[/template]

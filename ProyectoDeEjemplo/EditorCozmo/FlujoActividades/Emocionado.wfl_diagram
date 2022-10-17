@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:workflow="http://www.RoboTaskFlow.org/workflow" xmi:id="_XNPMMEl8Ee2ycL07CBfFiA" type="Workflow" name="Emocionado.wfl_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_ASvw8El9Ee2ycL07CBfFiA" type="2003" fontName="Segoe UI">
+    <element xmi:type="workflow:Initial" href="../Modelos/Emocionado.wfl#//@tasks.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ASvw8Ul9Ee2ycL07CBfFiA" x="184" y="75"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_AiUeAEl9Ee2ycL07CBfFiA" type="2004" fontName="Segoe UI">
+    <element xmi:type="workflow:Final" href="../Modelos/Emocionado.wfl#//@tasks.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AiUeAUl9Ee2ycL07CBfFiA" x="166" y="432"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_A6d4QEl9Ee2ycL07CBfFiA" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_A6d4RUl9Ee2ycL07CBfFiA" type="5008"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_A6d4QUl9Ee2ycL07CBfFiA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_A6d4Qkl9Ee2ycL07CBfFiA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_A6d4Q0l9Ee2ycL07CBfFiA"/>
+    <element xmi:type="workflow:Activity" href="../Modelos/Emocionado.wfl#//@tasks.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A6d4REl9Ee2ycL07CBfFiA" x="132" y="250"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_XNPMMUl8Ee2ycL07CBfFiA"/>
+  <element xmi:type="workflow:Workflow" href="../Modelos/Emocionado.wfl#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_EBc3UEl9Ee2ycL07CBfFiA" type="4001" source="_ASvw8El9Ee2ycL07CBfFiA" target="_A6d4QEl9Ee2ycL07CBfFiA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_EBc3UUl9Ee2ycL07CBfFiA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_EBc3Ukl9Ee2ycL07CBfFiA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/Emocionado.wfl#//@links.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EBc3U0l9Ee2ycL07CBfFiA" points="[-5, 35, 17, -140]$[43, 174, 65, -1]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_EaRnAEl9Ee2ycL07CBfFiA" type="4001" source="_A6d4QEl9Ee2ycL07CBfFiA" target="_AiUeAEl9Ee2ycL07CBfFiA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_EaRnAUl9Ee2ycL07CBfFiA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_EaRnAkl9Ee2ycL07CBfFiA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/Emocionado.wfl#//@links.1"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EaRnA0l9Ee2ycL07CBfFiA" points="[-6, 35, -10, -147]$[-31, 173, -35, -9]"/>
+  </edges>
+</notation:Diagram>

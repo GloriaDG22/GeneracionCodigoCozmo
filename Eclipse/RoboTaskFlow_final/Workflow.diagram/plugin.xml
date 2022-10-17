@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+
+-->
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="wfl_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="wfl_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="workflow.diagram.part.WorkflowDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/WorkflowDiagramFile.gif"
+         extensions="wfl_diagram"
+         default="true"
+         class="workflow.diagram.part.WorkflowDiagramEditor"
+         matchingStrategy="workflow.diagram.part.WorkflowMatchingStrategy"
+         contributorClass="workflow.diagram.part.WorkflowDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="workflow.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/WorkflowDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="workflow.diagram.part.WorkflowCreationWizard"
+  	     id="workflow.diagram.part.WorkflowCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="Workflow.diagram.InitDiagram"
+            nameFilter="*.wfl"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="workflow.diagram.part.WorkflowInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="Workflow.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="WorkflowPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="workflow.diagram.part.WorkflowDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="WorkflowPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="workflow.diagram.part.WorkflowDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="WorkflowPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="workflow.diagram.part.WorkflowDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="WorkflowRender">
+         <Priority name="Lowest"/>
+         <ViewId id="workflow.diagram.part.WorkflowDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="workflow.diagram.providers.WorkflowMarkerNavigationProvider">
+         <MarkerType name="Workflow.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="Workflow Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="workflow.diagram.providers.WorkflowValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="workflow.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="Workflow.diagram.general"
+            name="%prefpage.Workflow.diagram.general"
+            class="workflow.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="Workflow.diagram.appearance"
+            name="%prefpage.Workflow.diagram.appearance"
+            category="Workflow.diagram.general"
+            class="workflow.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="Workflow.diagram.connections"
+            name="%prefpage.Workflow.diagram.connections"
+            category="Workflow.diagram.general"
+            class="workflow.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="Workflow.diagram.printing"
+            name="%prefpage.Workflow.diagram.printing"
+            category="Workflow.diagram.general"
+            class="workflow.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="Workflow.diagram.rulersAndGrid"
+            name="%prefpage.Workflow.diagram.rulersAndGrid"
+            category="Workflow.diagram.general"
+            class="workflow.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="Workflow.diagram"
+            labelProvider="workflow.diagram.sheet.WorkflowSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="Workflow.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="Workflow.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="workflow.diagram.sheet.WorkflowPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="workflow.diagram.navigator.WorkflowAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="workflow.diagram.providers.WorkflowViewProvider">
+         <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="workflow"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Workflow"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,3001,3002,3003,3004,3005,3006,3007,3008"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="workflow.diagram.providers.WorkflowEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="Workflow"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,3001,3002,3003,3004,3005,3006,3007,3008"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5007,5008,5009,5010,5006,5002,5001,5004,5003,5005"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002,7003,7004"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfWorkflowEditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.WorkflowEditPart" id="Workflow_1000"/>
+         <context elements="Workflow_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfLoopEditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.LoopEditPart" id="Loop_2001"/>
+         <context elements="Loop_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfActivityEditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.ActivityEditPart" id="Activity_2002"/>
+         <context elements="Activity_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfInitialEditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.InitialEditPart" id="Initial_2003"/>
+         <context elements="Initial_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfFinalEditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.FinalEditPart" id="Final_2004"/>
+         <context elements="Final_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfQuestionEditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.QuestionEditPart" id="Question_2005"/>
+         <context elements="Question_2005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfAnswerEditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.AnswerEditPart" id="Answer_2006"/>
+         <context elements="Answer_2006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfLoop2EditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.Loop2EditPart" id="Loop_3001"/>
+         <context elements="Loop_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfActivity2EditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.Activity2EditPart" id="Activity_3002"/>
+         <context elements="Activity_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfParameterEditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.ParameterEditPart" id="Parameter_3003"/>
+         <context elements="Parameter_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfInitial2EditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.Initial2EditPart" id="Initial_3004"/>
+         <context elements="Initial_3004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfFinal2EditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.Final2EditPart" id="Final_3005"/>
+         <context elements="Final_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfQuestion2EditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.Question2EditPart" id="Question_3006"/>
+         <context elements="Question_3006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfAnswer2EditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.Answer2EditPart" id="Answer_3007"/>
+         <context elements="Answer_3007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="workflow.diagram.providers.assistants.WorkflowModelingAssistantProviderOfAnswer3EditPart">
+         <Priority name="Lowest"/>
+         <object class="workflow.diagram.edit.parts.Answer3EditPart" id="Answer_3008"/>
+         <context elements="Answer_3008"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="workflow.diagram.providers.WorkflowIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="workflow.diagram.providers.WorkflowParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="workflow.diagram.providers.WorkflowShortcutsDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006"/>
+         </object>
+         <context decoratorTargets="generated-top-nodes"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <metamodelType
+               id="Workflow.diagram.Workflow_1000"
+               name="%metatype.name.Workflow_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Workflow"
+               edithelper="workflow.diagram.edit.helpers.WorkflowEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <metamodelType
+               id="Workflow.diagram.Loop_2001"
+               name="%metatype.name.Loop_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Loop"
+               edithelper="workflow.diagram.edit.helpers.LoopEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <specializationType
+               id="Workflow.diagram.Activity_2002"
+               name="%metatype.name.Activity_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="Workflow.diagram.Activity_3002"/>
+            <param name="semanticHint" value="2002"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <specializationType
+               id="Workflow.diagram.Initial_2003"
+               name="%metatype.name.Initial_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="Workflow.diagram.Initial_3004"/>
+            <param name="semanticHint" value="2003"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <specializationType
+               id="Workflow.diagram.Final_2004"
+               name="%metatype.name.Final_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="Workflow.diagram.Final_3005"/>
+            <param name="semanticHint" value="2004"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <specializationType
+               id="Workflow.diagram.Question_2005"
+               name="%metatype.name.Question_2005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="Workflow.diagram.Question_3006"/>
+            <param name="semanticHint" value="2005"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <specializationType
+               id="Workflow.diagram.Answer_2006"
+               name="%metatype.name.Answer_2006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="Workflow.diagram.Answer_3007"/>
+            <param name="semanticHint" value="2006"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <specializationType
+               id="Workflow.diagram.Loop_3001"
+               name="%metatype.name.Loop_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="Workflow.diagram.Loop_2001"/>
+            <param name="semanticHint" value="3001"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <metamodelType
+               id="Workflow.diagram.Activity_3002"
+               name="%metatype.name.Activity_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Activity"
+               edithelper="workflow.diagram.edit.helpers.ActivityEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <metamodelType
+               id="Workflow.diagram.Parameter_3003"
+               name="%metatype.name.Parameter_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Parameter"
+               edithelper="workflow.diagram.edit.helpers.ParameterEditHelper">
+            <param name="semanticHint" value="3003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <metamodelType
+               id="Workflow.diagram.Initial_3004"
+               name="%metatype.name.Initial_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Initial"
+               edithelper="workflow.diagram.edit.helpers.InitialEditHelper">
+            <param name="semanticHint" value="3004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <metamodelType
+               id="Workflow.diagram.Final_3005"
+               name="%metatype.name.Final_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Final"
+               edithelper="workflow.diagram.edit.helpers.FinalEditHelper">
+            <param name="semanticHint" value="3005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <metamodelType
+               id="Workflow.diagram.Question_3006"
+               name="%metatype.name.Question_3006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Question"
+               edithelper="workflow.diagram.edit.helpers.QuestionEditHelper">
+            <param name="semanticHint" value="3006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <metamodelType
+               id="Workflow.diagram.Answer_3007"
+               name="%metatype.name.Answer_3007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Answer"
+               edithelper="workflow.diagram.edit.helpers.AnswerEditHelper">
+            <param name="semanticHint" value="3007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <specializationType
+               id="Workflow.diagram.Answer_3008"
+               name="%metatype.name.Answer_3008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="Workflow.diagram.Answer_3007"/>
+            <param name="semanticHint" value="3008"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.RoboTaskFlow.org/workflow">
+         <metamodelType
+               id="Workflow.diagram.Link_4001"
+               name="%metatype.name.Link_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Link"
+               edithelper="workflow.diagram.edit.helpers.LinkEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="Workflow.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="Workflow.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="Workflow.diagram.TypeContext">
+         <elementType ref="Workflow.diagram.Workflow_1000"/>
+         <elementType ref="Workflow.diagram.Loop_2001"/>
+         <elementType ref="Workflow.diagram.Activity_2002"/>
+         <elementType ref="Workflow.diagram.Initial_2003"/>
+         <elementType ref="Workflow.diagram.Final_2004"/>
+         <elementType ref="Workflow.diagram.Question_2005"/>
+         <elementType ref="Workflow.diagram.Answer_2006"/>
+         <elementType ref="Workflow.diagram.Loop_3001"/>
+         <elementType ref="Workflow.diagram.Activity_3002"/>
+         <elementType ref="Workflow.diagram.Parameter_3003"/>
+         <elementType ref="Workflow.diagram.Initial_3004"/>
+         <elementType ref="Workflow.diagram.Final_3005"/>
+         <elementType ref="Workflow.diagram.Question_3006"/>
+         <elementType ref="Workflow.diagram.Answer_3007"/>
+         <elementType ref="Workflow.diagram.Answer_3008"/>
+         <elementType ref="Workflow.diagram.Link_4001"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="Workflow.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="Workflow.diagram"
+           properties="isURIEditorInput"
+           class="workflow.diagram.part.WorkflowUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="Workflow.diagram.ShortcutPropertyTester"
+           type="org.eclipse.gmf.runtime.notation.View"
+           namespace="Workflow.diagram"
+           properties="isShortcut"
+           class="workflow.diagram.part.WorkflowShortcutPropertyTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="Workflow.diagram.resourceContent"/>
+			<contentExtension pattern="Workflow.diagram.domainResourceContent"/>
+            <contentExtension pattern="Workflow.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="Workflow.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="Workflow.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="workflow.diagram.navigator.WorkflowNavigatorContentProvider" 
+            labelProvider="workflow.diagram.navigator.WorkflowNavigatorLabelProvider"
+            icon="icons/obj16/WorkflowDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="wfl_diagram"/>
+               </and>
+               <instanceof value="workflow.diagram.navigator.WorkflowAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="Workflow.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="workflow.diagram.navigator.WorkflowAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="Workflow.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="Workflow.diagram.navigatorSorter" 
+               class="workflow.diagram.navigator.WorkflowNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="wfl_diagram"/>
+                  </and>
+                  <instanceof value="workflow.diagram.navigator.WorkflowAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="Workflow.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="workflow.diagram.navigator.WorkflowDomainNavigatorContentProvider" 
+            labelProvider="workflow.diagram.navigator.WorkflowDomainNavigatorLabelProvider"
+            icon="icons/obj16/WorkflowDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="wfl"/>
+               </and>
+               <instanceof value="workflow.diagram.navigator.WorkflowDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="workflow.diagram.navigator.WorkflowDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="Workflow.diagram.navigatorActionProvider"
+            class="workflow.diagram.navigator.WorkflowNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="workflow.diagram.navigator.WorkflowAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="Workflow.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="Workflow.diagram.navigatorLinkHelper"
+            class="workflow.diagram.navigator.WorkflowNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="Workflow.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="workflow.diagram.navigator.WorkflowAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="workflow.diagram.part.WorkflowDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="workflow.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="workflow.diagram.updateDiagram"
+         contextId="workflow.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="Workflow.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="workflow.diagram.part.WorkflowDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="workflow.diagram.edit.parts.WorkflowEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="workflow.diagram.part.WorkflowDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="Workflow.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="workflow.diagram.part.WorkflowDiagramEditorID"
+         defaultHandler="workflow.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

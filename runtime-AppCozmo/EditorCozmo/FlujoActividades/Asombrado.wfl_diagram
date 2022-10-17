@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:workflow="http://www.RoboTaskFlow.org/workflow" xmi:id="_QOobUEl8Ee2ycL07CBfFiA" type="Workflow" name="Asombrado.wfl_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_ZJ8UAEl9Ee2ycL07CBfFiA" type="2003" fontName="Segoe UI">
+    <element xmi:type="workflow:Initial" href="../Modelos/Asombrado.wfl#//@tasks.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZJ8UAUl9Ee2ycL07CBfFiA" x="60" y="30"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_ZZSXkEl9Ee2ycL07CBfFiA" type="2004" fontName="Segoe UI">
+    <element xmi:type="workflow:Final" href="../Modelos/Asombrado.wfl#//@tasks.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZZSXkUl9Ee2ycL07CBfFiA" x="60" y="285" width="5" height="5"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Zqus4El9Ee2ycL07CBfFiA" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Zqus5Ul9Ee2ycL07CBfFiA" type="5008"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_Zqus4Ul9Ee2ycL07CBfFiA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Zqus4kl9Ee2ycL07CBfFiA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_Zqus40l9Ee2ycL07CBfFiA"/>
+    <element xmi:type="workflow:Activity" href="../Modelos/Asombrado.wfl#//@tasks.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Zqus5El9Ee2ycL07CBfFiA" x="30" y="165"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_QOobUUl8Ee2ycL07CBfFiA"/>
+  <element xmi:type="workflow:Workflow" href="../Modelos/Asombrado.wfl#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_ePn0YEl9Ee2ycL07CBfFiA" type="4001" source="_ZJ8UAEl9Ee2ycL07CBfFiA" target="_Zqus4El9Ee2ycL07CBfFiA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_ePn0YUl9Ee2ycL07CBfFiA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ePn0Ykl9Ee2ycL07CBfFiA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/Asombrado.wfl#//@links.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ePn0Y0l9Ee2ycL07CBfFiA" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hmpakEl9Ee2ycL07CBfFiA" id="(0.5,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hmpakUl9Ee2ycL07CBfFiA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_emW5YEl9Ee2ycL07CBfFiA" type="4001" source="_Zqus4El9Ee2ycL07CBfFiA" target="_ZZSXkEl9Ee2ycL07CBfFiA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_emW5YUl9Ee2ycL07CBfFiA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_emW5Ykl9Ee2ycL07CBfFiA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/Asombrado.wfl#//@links.1"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_emW5Y0l9Ee2ycL07CBfFiA" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hmpakkl9Ee2ycL07CBfFiA" id="(0.5,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hmpak0l9Ee2ycL07CBfFiA" id="(0.5,0.0)"/>
+  </edges>
+</notation:Diagram>

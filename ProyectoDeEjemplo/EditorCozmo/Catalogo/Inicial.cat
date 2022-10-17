@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogue:Catalogue xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:catalogue="http://www.RoboTaskFlow.org/catalogue" name="Inicial">
+  <gathers xsi:type="catalogue:SimpleTask" name="Hablar">
+    <paramsDefinitions name="text" type="STRING"/>
+  </gathers>
+  <gathers xsi:type="catalogue:SimpleTask" name="MoverBrazos">
+    <paramsDefinitions name="origen"/>
+    <paramsDefinitions name="destino"/>
+    <paramsDefinitions name="n_veces"/>
+  </gathers>
+  <gathers xsi:type="catalogue:SimpleTask" name="MoverRuedas">
+    <paramsDefinitions name="n_velocidad"/>
+    <paramsDefinitions name="tiempo"/>
+    <paramsDefinitions name="girar" type="BOOLEAN"/>
+  </gathers>
+  <gathers xsi:type="catalogue:SimpleTask" name="MoverCabeza">
+    <paramsDefinitions name="origen"/>
+    <paramsDefinitions name="destino"/>
+    <paramsDefinitions name="n_veces"/>
+  </gathers>
+  <gathers xsi:type="catalogue:SimpleTask" name="MostrarSentimiento">
+    <paramsDefinitions name="n_sentimiento"/>
+  </gathers>
+  <gathers xsi:type="catalogue:SimpleTask" name="MostrarImagen">
+    <paramsDefinitions name="imagen" type="STRING"/>
+  </gathers>
+  <gathers xsi:type="catalogue:SimpleTask" name="HacerFoto"/>
+  <gathers xsi:type="catalogue:SimpleTask" name="CambiarColorLuz">
+    <paramsDefinitions name="n_luz"/>
+  </gathers>
+  <gathers xsi:type="catalogue:ComplexTask" name="Saludar">
+    <paramsDefinitions name="text_Presentarse" type="STRING">
+      <boundTo href="../Modelos/Saludar.wfl#//@tasks.2/@parameters.0"/>
+    </paramsDefinitions>
+    <workflow href="../Modelos/Saludar.wfl#/"/>
+  </gathers>
+  <gathers xsi:type="catalogue:ComplexTask" name="Asombrado">
+    <workflow href="../Modelos/Asombrado.wfl#/"/>
+  </gathers>
+  <gathers xsi:type="catalogue:ComplexTask" name="Contento">
+    <workflow href="../Modelos/Contento.wfl#/"/>
+  </gathers>
+  <gathers xsi:type="catalogue:ComplexTask" name="Confuso">
+    <workflow href="../Modelos/Confuso.wfl#/"/>
+  </gathers>
+  <gathers xsi:type="catalogue:ComplexTask" name="Emocionado">
+    <workflow href="../Modelos/Emocionado.wfl#/"/>
+  </gathers>
+  <gathers xsi:type="catalogue:ComplexTask" name="Sorprendido">
+    <workflow href="../Modelos/Sorprendido.wfl#/"/>
+  </gathers>
+  <gathers xsi:type="catalogue:ComplexTask" name="AndaYGira">
+    <workflow href="../Modelos/AndaYGira.wfl#/"/>
+  </gathers>
+</catalogue:Catalogue>

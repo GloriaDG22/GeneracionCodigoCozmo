@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generateImports" nsURI="org::eclipse::acceleo::module::workflow2cozmo::common::generateImports" startHeaderPosition="29" endHeaderPosition="215">
+    <input>
+      <takesTypesFrom href="http://www.RoboTaskFlow.org/workflow#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.RoboTaskFlow.org/catalogue#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateImports" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import pycozmo&#xA;import time&#xA;&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import TareasGenericas as mycozmo&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="from "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/catalogue#//ComplexTask"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/catalogue#//TaskDefinition"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Activity"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="aTask" referredVariable="/0/generateImports/%.2/aTask">
+                      <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:TypeExp" eType="/9/Activity">
+                      <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Activity"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.RoboTaskFlow.org/workflow#//Activity/taskDefinition"/>
+                </source>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/9/ComplexTask">
+                  <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/catalogue#//ComplexTask"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.RoboTaskFlow.org/catalogue#//TaskDefinition/name"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" import *&#xA;"/>
+            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/catalogue#//TaskDefinition"/>
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Activity"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="aTask" referredVariable="/0/generateImports/%.2/aTask">
+                    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/9/Activity">
+                    <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Activity"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.RoboTaskFlow.org/workflow#//Activity/taskDefinition"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/9/ComplexTask">
+                <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/catalogue#//ComplexTask"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+            </ifExpr>
+          </body>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aTask" referredVariable="/0/generateImports/%.2/aTask">
+              <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/9/Activity">
+              <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Activity"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+          </ifExpr>
+          <elseIf>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:IfBlock">
+                <body xsi:type="mtl:IfBlock">
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="from "/>
+                  <body xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/catalogue#//ComplexTask"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/catalogue#//TaskDefinition"/>
+                        <source xsi:type="ocl.ecore:OperationCallExp">
+                          <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Activity"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="aTaskLoop" referredVariable="/0/generateImports/%.2/%/%.2/%/aTaskLoop">
+                            <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+                          </source>
+                          <argument xsi:type="ocl.ecore:TypeExp" eType="/9/Activity">
+                            <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Activity"/>
+                          </argument>
+                          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EReference" href="http://www.RoboTaskFlow.org/workflow#//Activity/taskDefinition"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:TypeExp" eType="/9/ComplexTask">
+                        <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/catalogue#//ComplexTask"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.RoboTaskFlow.org/catalogue#//TaskDefinition/name"/>
+                  </body>
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" import *&#xA;"/>
+                  <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/catalogue#//TaskDefinition"/>
+                      <source xsi:type="ocl.ecore:OperationCallExp">
+                        <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Activity"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="aTaskLoop" referredVariable="/0/generateImports/%.2/%/%.2/%/aTaskLoop">
+                          <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+                        </source>
+                        <argument xsi:type="ocl.ecore:TypeExp" eType="/9/Activity">
+                          <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Activity"/>
+                        </argument>
+                        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EReference" href="http://www.RoboTaskFlow.org/workflow#//Activity/taskDefinition"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:TypeExp" eType="/9/ComplexTask">
+                      <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/catalogue#//ComplexTask"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+                  </ifExpr>
+                </body>
+                <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="aTaskLoop" referredVariable="/0/generateImports/%.2/%/%.2/%/aTaskLoop">
+                    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/9/Activity">
+                    <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Activity"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+                </ifExpr>
+              </body>
+              <loopVariable name="aTaskLoop">
+                <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+              </loopVariable>
+              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Task)">
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Loop"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="aTask" referredVariable="/0/generateImports/%.2/aTask">
+                    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/9/Loop">
+                    <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Loop"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.RoboTaskFlow.org/workflow#//Workflow/tasks"/>
+              </iterSet>
+            </body>
+            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="aTask" referredVariable="/0/generateImports/%.2/aTask">
+                <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/9/Loop">
+                <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Loop"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+            </ifExpr>
+          </elseIf>
+        </body>
+        <loopVariable name="aTask">
+          <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Task)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aWorkflow" referredVariable="/0/generateImports/aWorkflow">
+            <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Workflow"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.RoboTaskFlow.org/workflow#//Workflow/tasks"/>
+        </iterSet>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import tkinter as tk"/>
+      <parameter name="aWorkflow">
+        <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Workflow"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateImports">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateImports"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aWorkflow">
+          <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Workflow"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="workflow_Workflow_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.RoboTaskFlow.org/workflow#//Workflow"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Workflow"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Workflow"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Task)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Workflow"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="Activity">
+      <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Activity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="ComplexTask">
+      <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/catalogue#//ComplexTask"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="Loop">
+      <referredType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Loop"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Task"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.RoboTaskFlow.org/workflow#//Workflow"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateImports">
+      <details key="start" value="136"/>
+      <details key="end" value="996"/>
+      <details key="line" value="4"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateImports/%">
+      <details key="start" value="218"/>
+      <details key="end" value="246"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateImports/%.1">
+      <details key="start" value="317"/>
+      <details key="end" value="351"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateImports/%.2">
+      <details key="start" value="351"/>
+      <details key="end" value="927"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateImports/%.2/%">
+      <details key="start" value="389"/>
+      <details key="end" value="920"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateImports/%.2/%/%">
+      <details key="start" value="425"/>
+      <details key="end" value="590"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateImports/%.2/%/%/%">
+      <details key="start" value="497"/>
+      <details key="end" value="502"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateImports/%.2/%/%/%.1">
+      <details key="start" value="503"/>
+      <details key="end" value="571"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateImports/%.2/%/%/%.1/%">
+      <details key="start" value="503"/>
+      <details key="end" value="566"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateImports/%.2/%/%/%.1/%/%">
+      <details key="start" value="503"/>
+      <details key="end" value="543"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateImports/%.2/%/%/%.1/%/%/%">
+      <details key="start" value="503"/>
+      <details key="end" value="528"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateImports/%.2/%/%/%.1/%/%/%/aTask">
+      <details key="start" value="503"/>
+      <details key="end" value="508"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateImports/%.2/%/%/%.1/%/%/%/%">
+      <details key="start" value="519"/>
+      <details key="end" value="527"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateImports/%.2/%/%/%.1/%/%.1">
+      <details key="start" value="554"/>
+      <details key="end" value="565"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateImports/%.2/%/%/%.2">
+      <details key="start" value="573"/>
+      <details key="end" value="583"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateImports/%.2/%/%/%.3">
+      <details key="start" value="428"/>
+      <details key="end" value="495"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateImports/%.2/%/%/%.3/%">
+      <details key="start" value="429"/>
+      <details key="end" value="469"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateImports/%.2/%/%/%.3/%/%">
+      <details key="start" value="429"/>
+      <details key="end" value="454"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateImports/%.2/%/%/%.3/%/%/aTask">
+      <details key="start" value="429"/>
+      <details key="end" value="434"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateImports/%.2/%/%/%.3/%/%/%">
+      <details key="start" value="445"/>
+      <details key="end" value="453"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateImports/%.2/%/%/%.3/%.1">
+      <details key="start" value="482"/>
+      <details key="end" value="493"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateImports/%.2/%/%.1">
+      <details key="start" value="392"/>
+      <details key="end" value="421"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateImports/%.2/%/%.1/aTask">
+      <details key="start" value="393"/>
+      <details key="end" value="398"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateImports/%.2/%/%.1/%">
+      <details key="start" value="411"/>
+      <details key="end" value="419"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateImports/%.2/%/%.2">
+      <details key="start" value="592"/>
+      <details key="end" value="915"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateImports/%.2/%/%.2/%">
+      <details key="start" value="628"/>
+      <details key="end" value="913"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateImports/%.2/%/%.2/%/%">
+      <details key="start" value="684"/>
+      <details key="end" value="904"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateImports/%.2/%/%.2/%/%/%">
+      <details key="start" value="725"/>
+      <details key="end" value="899"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateImports/%.2/%/%.2/%/%/%/%">
+      <details key="start" value="801"/>
+      <details key="end" value="806"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateImports/%.2/%/%.2/%/%/%/%.1">
+      <details key="start" value="807"/>
+      <details key="end" value="879"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateImports/%.2/%/%.2/%/%/%/%.1/%">
+      <details key="start" value="807"/>
+      <details key="end" value="874"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateImports/%.2/%/%.2/%/%/%/%.1/%/%">
+      <details key="start" value="807"/>
+      <details key="end" value="851"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateImports/%.2/%/%.2/%/%/%/%.1/%/%/%">
+      <details key="start" value="807"/>
+      <details key="end" value="836"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateImports/%.2/%/%.2/%/%/%/%.1/%/%/%/aTaskLoop">
+      <details key="start" value="807"/>
+      <details key="end" value="816"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateImports/%.2/%/%.2/%/%/%/%.1/%/%/%/%">
+      <details key="start" value="827"/>
+      <details key="end" value="835"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateImports/%.2/%/%.2/%/%/%/%.1/%/%.1">
+      <details key="start" value="862"/>
+      <details key="end" value="873"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateImports/%.2/%/%.2/%/%/%/%.2">
+      <details key="start" value="881"/>
+      <details key="end" value="891"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateImports/%.2/%/%.2/%/%/%/%.3">
+      <details key="start" value="728"/>
+      <details key="end" value="799"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateImports/%.2/%/%.2/%/%/%/%.3/%">
+      <details key="start" value="729"/>
+      <details key="end" value="773"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateImports/%.2/%/%.2/%/%/%/%.3/%/%">
+      <details key="start" value="729"/>
+      <details key="end" value="758"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateImports/%.2/%/%.2/%/%/%/%.3/%/%/aTaskLoop">
+      <details key="start" value="729"/>
+      <details key="end" value="738"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateImports/%.2/%/%.2/%/%/%/%.3/%/%/%">
+      <details key="start" value="749"/>
+      <details key="end" value="757"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateImports/%.2/%/%.2/%/%/%/%.3/%.1">
+      <details key="start" value="786"/>
+      <details key="end" value="797"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateImports/%.2/%/%.2/%/%/%.1">
+      <details key="start" value="687"/>
+      <details key="end" value="720"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateImports/%.2/%/%.2/%/%/%.1/aTaskLoop">
+      <details key="start" value="688"/>
+      <details key="end" value="697"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateImports/%.2/%/%.2/%/%/%.1/%">
+      <details key="start" value="710"/>
+      <details key="end" value="718"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateImports/%.2/%/%.2/%/aTaskLoop">
+      <details key="start" value="634"/>
+      <details key="end" value="648"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateImports/%.2/%/%.2/%/%.1">
+      <details key="start" value="651"/>
+      <details key="end" value="678"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateImports/%.2/%/%.2/%/%.1/%">
+      <details key="start" value="651"/>
+      <details key="end" value="672"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateImports/%.2/%/%.2/%/%.1/%/aTask">
+      <details key="start" value="651"/>
+      <details key="end" value="656"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateImports/%.2/%/%.2/%/%.1/%/%">
+      <details key="start" value="667"/>
+      <details key="end" value="671"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateImports/%.2/%/%.2/%.1">
+      <details key="start" value="599"/>
+      <details key="end" value="624"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateImports/%.2/%/%.2/%.1/aTask">
+      <details key="start" value="600"/>
+      <details key="end" value="605"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateImports/%.2/%/%.2/%.1/%">
+      <details key="start" value="618"/>
+      <details key="end" value="622"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateImports/%.2/aTask">
+      <details key="start" value="357"/>
+      <details key="end" value="367"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateImports/%.2/%.1">
+      <details key="start" value="370"/>
+      <details key="end" value="385"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateImports/%.2/%.1/aWorkflow">
+      <details key="start" value="370"/>
+      <details key="end" value="379"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateImports/%.3">
+      <details key="start" value="928"/>
+      <details key="end" value="929"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateImports/%.4">
+      <details key="start" value="964"/>
+      <details key="end" value="984"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateImports/aWorkflow">
+      <details key="start" value="169"/>
+      <details key="end" value="189"/>
+      <details key="line" value="4"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

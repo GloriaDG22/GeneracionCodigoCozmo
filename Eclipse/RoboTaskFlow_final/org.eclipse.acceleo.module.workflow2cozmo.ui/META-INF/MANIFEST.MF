@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo workflow2cozmoui Module IDE Plug-in
+Bundle-SymbolicName: org.eclipse.acceleo.module.workflow2cozmo.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.acceleo.module.workflow2cozmo.ui.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources, 
+ Catalogue.diagram,
+ org.eclipse.acceleo.module.workflow2cozmo,
+ RoboTaskFlow,
+ RoboTaskFlow.edit,
+ RoboTaskFlow.editor,
+ RoboTaskFlow.tests,
+ Workflow.diagram,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.model,
+ org.eclipse.acceleo.engine
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow:Workflow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:catalogue="http://www.RoboTaskFlow.org/catalogue" xmlns:workflow="http://www.RoboTaskFlow.org/workflow" name="todo">
+  <tasks xsi:type="workflow:Initial" outgoing="//@links.0"/>
+  <tasks xsi:type="workflow:Final" incoming="//@links.8"/>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.1" incoming="//@links.0" name="Saludar">
+    <parameters name="text_Saludar" value="Hola">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.0/@paramsDefinitions.0"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.0"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.5" incoming="//@links.4" name="LuzAzul">
+    <parameters name="n_luz_LuzAzul" value="2">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.7/@paramsDefinitions.0"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.7"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.4" incoming="//@links.3" name="Contento">
+    <parameters name="n_sentimiento_Contento" value="3">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.4/@paramsDefinitions.0"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.4"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.3" incoming="//@links.2" name="ImagenHelloWord">
+    <parameters name="imagen_ImagenHelloWord" value="hello_world">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.5/@paramsDefinitions.0"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.5"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.2" incoming="//@links.1" name="HacerFoto">
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.6"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.8" incoming="//@links.7" name="SubirBrazos">
+    <parameters name="origen_SubirBrazos" value="5">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.1/@paramsDefinitions.0"/>
+    </parameters>
+    <parameters name="destino_SubirBrazos" value="1">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.1/@paramsDefinitions.1"/>
+    </parameters>
+    <parameters name="n_veces_SubirBrazos" value="2">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.1/@paramsDefinitions.2"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.1"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.6" incoming="//@links.5" name="SubirCabeza">
+    <parameters name="origen_SubirCabeza" value="1">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.3/@paramsDefinitions.0"/>
+    </parameters>
+    <parameters name="destino_SubirCabeza" value="3">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.3/@paramsDefinitions.1"/>
+    </parameters>
+    <parameters name="n_veces_SubirCabeza" value="4">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.3/@paramsDefinitions.2"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.3"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.7" incoming="//@links.6" name="Andar">
+    <parameters name="n_velocidad_Andar" value="3">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.0"/>
+    </parameters>
+    <parameters name="tiempo_Andar" value="4">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.1"/>
+    </parameters>
+    <parameters name="girar_Andar" value="Falso">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.2"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.2"/>
+  </tasks>
+  <links source="//@tasks.0" target="//@tasks.2"/>
+  <links source="//@tasks.2" target="//@tasks.6"/>
+  <links source="//@tasks.6" target="//@tasks.5"/>
+  <links source="//@tasks.5" target="//@tasks.4"/>
+  <links source="//@tasks.4" target="//@tasks.3"/>
+  <links source="//@tasks.3" target="//@tasks.8"/>
+  <links source="//@tasks.8" target="//@tasks.9"/>
+  <links source="//@tasks.9" target="//@tasks.7"/>
+  <links source="//@tasks.7" target="//@tasks.1"/>
+</workflow:Workflow>

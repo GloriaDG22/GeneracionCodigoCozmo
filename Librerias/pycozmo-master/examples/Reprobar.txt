@@ -1,0 +1,16 @@
+volver a intentar
+01
+05
+07
+21
+
+No sé que hace
+11
+13
+22 ¿necesito sevidor?
+
+
+14.imu - controla la posidición
+17.path - recorre un cuadro
+20. muestra una imagen en la  pantalla del ordenador
+23.video - muestra lo que hay por camara

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:workflow="http://www.RoboTaskFlow.org/workflow" xmi:id="_aB2eAEreEe2TK-Ijlj9bxA" type="Workflow" name="QueHacemos.wfl_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_b7HFsEreEe2TK-Ijlj9bxA" type="2003" fontName="Segoe UI">
+    <element xmi:type="workflow:Initial" href="../Modelos/QueHacemos.wfl#//@tasks.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b7HFsUreEe2TK-Ijlj9bxA" x="480" y="36"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_c11BgEreEe2TK-Ijlj9bxA" type="2004" fontName="Segoe UI">
+    <element xmi:type="workflow:Final" href="../Modelos/QueHacemos.wfl#//@tasks.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c11BgUreEe2TK-Ijlj9bxA" x="504" y="660"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_dMWrIEreEe2TK-Ijlj9bxA" type="2004" fontName="Segoe UI">
+    <element xmi:type="workflow:Final" href="../Modelos/QueHacemos.wfl#//@tasks.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dMWrIUreEe2TK-Ijlj9bxA" x="120" y="756"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_d4MdcEreEe2TK-Ijlj9bxA" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_d4MddUreEe2TK-Ijlj9bxA" type="5008"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_d4MdcUreEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_d4MdckreEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_d4Mdc0reEe2TK-Ijlj9bxA"/>
+    <element xmi:type="workflow:Activity" href="../Modelos/QueHacemos.wfl#//@tasks.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d4MddEreEe2TK-Ijlj9bxA" x="462" y="171"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_hF36YEreEe2TK-Ijlj9bxA" type="2005">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hF36ZUreEe2TK-Ijlj9bxA" type="5009"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_hF36ZkreEe2TK-Ijlj9bxA" type="7004">
+      <children xmi:type="notation:Node" xmi:id="_ixcrYEreEe2TK-Ijlj9bxA" type="3007">
+        <children xmi:type="notation:DecorationNode" xmi:id="_ixcrZEreEe2TK-Ijlj9bxA" type="5003"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_ixcrYUreEe2TK-Ijlj9bxA"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_ixcrYkreEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+        <element xmi:type="workflow:Answer" href="../Modelos/QueHacemos.wfl#//@tasks.4/@answers.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ixcrY0reEe2TK-Ijlj9bxA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_kDKK4EreEe2TK-Ijlj9bxA" type="3007">
+        <children xmi:type="notation:DecorationNode" xmi:id="_kDKK5EreEe2TK-Ijlj9bxA" type="5003"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_kDKK4UreEe2TK-Ijlj9bxA"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_kDKK4kreEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+        <element xmi:type="workflow:Answer" href="../Modelos/QueHacemos.wfl#//@tasks.4/@answers.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kDKK40reEe2TK-Ijlj9bxA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_mLABIEreEe2TK-Ijlj9bxA" type="3007">
+        <children xmi:type="notation:DecorationNode" xmi:id="_mLABJEreEe2TK-Ijlj9bxA" type="5003"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_mLABIUreEe2TK-Ijlj9bxA"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_mLABIkreEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+        <element xmi:type="workflow:Answer" href="../Modelos/QueHacemos.wfl#//@tasks.4/@answers.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mLABI0reEe2TK-Ijlj9bxA"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_hF36Z0reEe2TK-Ijlj9bxA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_hF36aEreEe2TK-Ijlj9bxA"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_hF36YUreEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_hF36YkreEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_hF36Y0reEe2TK-Ijlj9bxA"/>
+    <element xmi:type="workflow:Question" href="../Modelos/QueHacemos.wfl#//@tasks.4"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hF36ZEreEe2TK-Ijlj9bxA" x="480" y="300"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_rNlKMEreEe2TK-Ijlj9bxA" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_rNlxQEreEe2TK-Ijlj9bxA" type="5007"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_rNlxQUreEe2TK-Ijlj9bxA" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_ktNGEErhEe2TK-Ijlj9bxA" type="3005" fontName="Segoe UI">
+        <element xmi:type="workflow:Final" href="../Modelos/QueHacemos.wfl#//@tasks.5/@tasks.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ktNGEUrhEe2TK-Ijlj9bxA" x="254" y="156"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_m0PrEErhEe2TK-Ijlj9bxA" type="3002">
+        <children xmi:type="notation:DecorationNode" xmi:id="_m0PrFUrhEe2TK-Ijlj9bxA" type="5002"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_m0PrEUrhEe2TK-Ijlj9bxA"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_m0PrEkrhEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_m0PrE0rhEe2TK-Ijlj9bxA"/>
+        <element xmi:type="workflow:Activity" href="../Modelos/QueHacemos.wfl#//@tasks.5/@tasks.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m0PrFErhEe2TK-Ijlj9bxA" x="110" y="36"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_ktKp0ErhEe2TK-Ijlj9bxA" type="3004" fontName="Segoe UI">
+        <element xmi:type="workflow:Initial" href="../Modelos/QueHacemos.wfl#//@tasks.5/@tasks.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ktKp0UrhEe2TK-Ijlj9bxA" x="2" y="24"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_ktFxUErhEe2TK-Ijlj9bxA" type="3002">
+        <children xmi:type="notation:DecorationNode" xmi:id="_oKRC0ErhEe2TK-Ijlj9bxA" type="5002"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_oKQbwUrhEe2TK-Ijlj9bxA"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_oKQbwkrhEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_oKQbw0rhEe2TK-Ijlj9bxA"/>
+        <element xmi:type="workflow:Activity" href="../Modelos/QueHacemos.wfl#//@tasks.5/@tasks.3"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ktFxVErhEe2TK-Ijlj9bxA" x="110" y="156"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_rNlKMUreEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_rNlKMkreEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_rNlKM0reEe2TK-Ijlj9bxA"/>
+    <element xmi:type="workflow:Loop" href="../Modelos/QueHacemos.wfl#//@tasks.5"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rNlKNEreEe2TK-Ijlj9bxA" x="-24" y="396" width="349" height="289"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Bys88ErfEe2TK-Ijlj9bxA" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BytkAErfEe2TK-Ijlj9bxA" type="5008"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_Bys88UrfEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Bys88krfEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_Bys880rfEe2TK-Ijlj9bxA"/>
+    <element xmi:type="workflow:Activity" href="../Modelos/QueHacemos.wfl#//@tasks.6"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bys89ErfEe2TK-Ijlj9bxA" x="780" y="352"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_KVF0wErfEe2TK-Ijlj9bxA" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_KVF0xUrfEe2TK-Ijlj9bxA" type="5008"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_KVF0wUrfEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_KVF0wkrfEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_KVF0w0rfEe2TK-Ijlj9bxA"/>
+    <element xmi:type="workflow:Activity" href="../Modelos/QueHacemos.wfl#//@tasks.7"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KVF0xErfEe2TK-Ijlj9bxA" x="480" y="528"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_ENlZEErhEe2TK-Ijlj9bxA" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_gixtBUrhEe2TK-Ijlj9bxA" type="5008"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_gixtAUrhEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_gixtAkrhEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_gixtA0rhEe2TK-Ijlj9bxA"/>
+    <element xmi:type="workflow:Activity" href="../Modelos/QueHacemos.wfl#//@tasks.8"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ENlZFErhEe2TK-Ijlj9bxA" x="96" y="288"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_QS1D4EryEe2NPN66N-AWhQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_QS1q8EryEe2NPN66N-AWhQ" type="5007"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_QS1q8UryEe2NPN66N-AWhQ" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_ckmuoEreEe2TK-Ijlj9bxA" type="3005" fontName="Segoe UI">
+        <element xmi:type="workflow:Final" href="../Modelos/QueHacemos.wfl#//@tasks.9/@tasks.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ckmuoUreEe2TK-Ijlj9bxA" x="170" y="369"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_CirBUErfEe2TK-Ijlj9bxA" type="3002">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SOKIIEryEe2NPN66N-AWhQ" type="5002"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_SOJhEUryEe2NPN66N-AWhQ"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_SOJhEkryEe2NPN66N-AWhQ" fontName="Segoe UI"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_SOJhE0ryEe2NPN66N-AWhQ"/>
+        <element xmi:type="workflow:Activity" href="../Modelos/QueHacemos.wfl#//@tasks.9/@tasks.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CirBVErfEe2TK-Ijlj9bxA" x="140" y="144"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_SOVHQEryEe2NPN66N-AWhQ" type="3002">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SOVuUEryEe2NPN66N-AWhQ" type="5002"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_SOVHQUryEe2NPN66N-AWhQ"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_SOVHQkryEe2NPN66N-AWhQ" fontName="Segoe UI"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_SOVHQ0ryEe2NPN66N-AWhQ"/>
+        <element xmi:type="workflow:Activity" href="../Modelos/QueHacemos.wfl#//@tasks.9/@tasks.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SOVHREryEe2NPN66N-AWhQ" x="140" y="279"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Xp70UEryEe2NPN66N-AWhQ" type="3004" fontName="Segoe UI">
+        <element xmi:type="workflow:Initial" href="../Modelos/QueHacemos.wfl#//@tasks.9/@tasks.3"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xp70UUryEe2NPN66N-AWhQ" x="170" y="9"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_QS1D4UryEe2NPN66N-AWhQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_QS1D4kryEe2NPN66N-AWhQ" fontName="Segoe UI"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_QS1D40ryEe2NPN66N-AWhQ"/>
+    <element xmi:type="workflow:Loop" href="../Modelos/QueHacemos.wfl#//@tasks.9"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QS1D5EryEe2NPN66N-AWhQ" x="975" y="300" width="340" height="510"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_bld1wEryEe2NPN66N-AWhQ" type="2004" fontName="Segoe UI">
+    <element xmi:type="workflow:Final" href="../Modelos/QueHacemos.wfl#//@tasks.10"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bld1wUryEe2NPN66N-AWhQ" x="810" y="735"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_aB2eAUreEe2TK-Ijlj9bxA"/>
+  <element xmi:type="workflow:Workflow" href="../Modelos/QueHacemos.wfl#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_N7bpUErfEe2TK-Ijlj9bxA" type="4001" source="_b7HFsEreEe2TK-Ijlj9bxA" target="_d4MdcEreEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_N7bpUUrfEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_N7bpUkrfEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@links.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_N7bpU0rfEe2TK-Ijlj9bxA" points="[5, 35, -7, -100]$[21, 170, 9, 35]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_OY3zQErfEe2TK-Ijlj9bxA" type="4001" source="_d4MdcEreEe2TK-Ijlj9bxA" target="_hF36YEreEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_OY3zQUrfEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_OY3zQkrfEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@links.1"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OY3zQ0rfEe2TK-Ijlj9bxA" points="[9, 35, 0, -75]$[9, 94, 0, -16]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OY4aUErfEe2TK-Ijlj9bxA" id="(0.5,0.10126582278481013)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_QksxoErfEe2TK-Ijlj9bxA" type="4001" source="_ixcrYEreEe2TK-Ijlj9bxA" target="_ENlZEErhEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_QksxoUrfEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_QksxokrfEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@links.2"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Qksxo0rfEe2TK-Ijlj9bxA" points="[-46, -9, 272, 52]$[-315, -76, 3, -15]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_RKpXUErfEe2TK-Ijlj9bxA" type="4001" source="_kDKK4EreEe2TK-Ijlj9bxA" target="_Bys88ErfEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_RKpXUUrfEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_RKpXUkrfEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@links.3"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RKpXU0rfEe2TK-Ijlj9bxA" points="[46, -1, -430, -9]$[470, -27, -6, -35]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_RloDIErfEe2TK-Ijlj9bxA" type="4001" source="_mLABIEreEe2TK-Ijlj9bxA" target="_KVF0wErfEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_RloDIUrfEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_RloDIkrfEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@links.4"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RloDI0rfEe2TK-Ijlj9bxA" points="[2, 20, -19, -123]$[19, 108, -2, -35]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_T3W1MErfEe2TK-Ijlj9bxA" type="4001" source="_rNlKMEreEe2TK-Ijlj9bxA" target="_dMWrIEreEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_T3W1MUrfEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_T3W1MkrfEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@tasks.5/@links.2"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_T3W1M0rfEe2TK-Ijlj9bxA" points="[3, 24, -13, -82]$[14, 71, -2, -35]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_T3XcQErfEe2TK-Ijlj9bxA" id="(0.4276923076923077,0.9133574007220217)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_UVfisErfEe2TK-Ijlj9bxA" type="4001" source="_KVF0wErfEe2TK-Ijlj9bxA" target="_c11BgEreEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_UVfisUrfEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_UVfiskrfEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@links.5"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UVfis0rfEe2TK-Ijlj9bxA" points="[-6, 35, 0, -85]$[-41, 87, -35, -33]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_naaTMErhEe2TK-Ijlj9bxA" type="4001" source="_ktKp0ErhEe2TK-Ijlj9bxA" target="_m0PrEErhEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_naaTMUrhEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_naaTMkrhEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@tasks.5/@links.3"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_naaTM0rhEe2TK-Ijlj9bxA" points="[0, 0, -175, -191]$[142, 156, -33, -35]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_oKTfEErhEe2TK-Ijlj9bxA" type="4001" source="_m0PrEErhEe2TK-Ijlj9bxA" target="_ktFxUErhEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_oKTfEUrhEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_oKTfEkrhEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@tasks.5/@links.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oKTfE0rhEe2TK-Ijlj9bxA" points="[-65, -27, 110, 44]$[-175, -71, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_oKTfFErhEe2TK-Ijlj9bxA" type="4001" source="_ktFxUErhEe2TK-Ijlj9bxA" target="_ktNGEErhEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_oKTfFUrhEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_oKTfFkrhEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@tasks.5/@links.1"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oKTfF0rhEe2TK-Ijlj9bxA" points="[0, 0, -289, -191]$[254, 167, -35, -24]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_tSJioErhEe2TK-Ijlj9bxA" type="4001" source="_ENlZEErhEe2TK-Ijlj9bxA" target="_rNlKMEreEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_tSJioUrhEe2TK-Ijlj9bxA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_tSJiokrhEe2TK-Ijlj9bxA" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@links.8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tSJio0rhEe2TK-Ijlj9bxA" points="[2, 16, -10, -63]$[14, 54, 2, -25]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tSKJsErhEe2TK-Ijlj9bxA" id="(0.4153846153846154,0.7714285714285715)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tSKJsUrhEe2TK-Ijlj9bxA" id="(0.5329512893982808,0.07987220447284345)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_SOpQUEryEe2NPN66N-AWhQ" type="4001" source="_CirBUErfEe2TK-Ijlj9bxA" target="_SOVHQEryEe2NPN66N-AWhQ">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_SOpQUUryEe2NPN66N-AWhQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_SOpQUkryEe2NPN66N-AWhQ" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@links.6"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SOpQU0ryEe2NPN66N-AWhQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_SOp3YEryEe2NPN66N-AWhQ" type="4001" source="_SOVHQEryEe2NPN66N-AWhQ" target="_ckmuoEreEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_SOp3YUryEe2NPN66N-AWhQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_SOp3YkryEe2NPN66N-AWhQ" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@links.7"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SOp3Y0ryEe2NPN66N-AWhQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_YDLawEryEe2NPN66N-AWhQ" type="4001" source="_Xp70UEryEe2NPN66N-AWhQ" target="_CirBUErfEe2TK-Ijlj9bxA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_YDLawUryEe2NPN66N-AWhQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_YDLawkryEe2NPN66N-AWhQ" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@tasks.9/@links.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YDLaw0ryEe2NPN66N-AWhQ" points="[-10, 35, 16, -45]$[-26, 115, 0, 35]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_a_O8MEryEe2NPN66N-AWhQ" type="4001" source="_Bys88ErfEe2TK-Ijlj9bxA" target="_QS1D4EryEe2NPN66N-AWhQ">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_a_O8MUryEe2NPN66N-AWhQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_a_O8MkryEe2NPN66N-AWhQ" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@links.9"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_a_O8M0ryEe2NPN66N-AWhQ" points="[65, -16, -241, 59]$[306, -87, 0, -12]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_a_QKUEryEe2NPN66N-AWhQ" id="(0.5176470588235295,0.023529411764705882)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_cCphAEryEe2NPN66N-AWhQ" type="4001" source="_QS1D4EryEe2NPN66N-AWhQ" target="_bld1wEryEe2NPN66N-AWhQ">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_cCphAUryEe2NPN66N-AWhQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_cCphAkryEe2NPN66N-AWhQ" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/QueHacemos.wfl#//@tasks.9/@links.1"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cCphA0ryEe2NPN66N-AWhQ" points="[-36, -3, 145, 23]$[-180, 9, 1, 35]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cCrWMEryEe2NPN66N-AWhQ" id="(0.10588235294117647,0.9196078431372549)"/>
+  </edges>
+</notation:Diagram>

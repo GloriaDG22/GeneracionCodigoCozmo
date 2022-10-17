@@ -1,0 +1,7 @@
+# Tracing options for the Catalogue.diagram plug-in
+
+# Common issues
+Catalogue.diagram/debug=false
+
+# Visual IDs
+Catalogue.diagram/debug/visualID=false

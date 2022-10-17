@@ -1,0 +1,86 @@
+@"http://www.eclipse.org/OCL/Import"(ecore="http://www.eclipse.org/emf/2002/Ecore")
+@Ecore(invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot")
+@namespace(uri="http://www.RoboTaskFlow.org/workflow", prefix="workflow")
+@gmf 
+package workflow;
+
+@Ecore(constraints="Workflow_have_one_and_only_one_initial_task Workflow_have_one_or_more_final_task")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(Workflow_have_one_and_only_one_initial_task="self.tasks->selectByType (Initial)->size()=1", Workflow_have_one_or_more_final_task="self.tasks->selectByType (Final)->size()>=1")
+@gmf.diagram
+class Workflow {
+  attr String[1] name;
+  @gmf.compartment(collapsible="true")
+  val Task[3..*] tasks;
+  val Link[2..*] links;
+}
+
+abstract class Task {
+  ref Link#source outgoing;
+  ref Link#target incoming;
+}
+
+@gmf.link(source="source", target="target", target.decoration="arrow", color="0,0,0")
+class Link {
+  ref Task[1]#outgoing source;
+  ref Task[1]#incoming target;
+}
+
+@Ecore(constraints="Activities_have_one_and_only_one_input_link Activities_have_one_and_only_one_output_link")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(Activities_have_one_and_only_one_input_link="self.incoming->size() = 1", Activities_have_one_and_only_one_output_link="self.outgoing->size() = 1")
+@gmf.node(label="name", size="130,70", border.color="0,0,0")
+class Activity extends Task {
+  attr String[1] name;
+  @gmf.affixed
+  val Parameter[*] parameters;
+}
+
+@gmf.node(label="name, value", label.pattern="{0}: {1}", label.icon="false", size="130,30", color="144,187,180", border.color="0,0,0")
+class Parameter {
+  attr String[1] name;
+  attr String[1] value;
+}
+
+@Ecore(constraints="One_and_only_one_output_link")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(One_and_only_one_output_link="self.incoming->size() = 0 and self.outgoing->size() = 1")
+@gmf.node(label.placement="none", label.icon="false", size="70,70", figure="svg", svg.uri="platform:/plugin/RoboTaskFlow/images/Initial.svg")
+class Initial extends Task {
+}
+
+@Ecore(constraints="One_and_only_one_input_link")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(One_and_only_one_input_link="self.outgoing->size() = 0 and self.incoming->size() = 1")
+@gmf.node(label.placement="none", label.icon="false", size="70,70", figure="svg", svg.uri="platform:/plugin/RoboTaskFlow/images/Final.svg")
+class Final extends Task {
+}
+
+@Ecore(constraints="One_and_only_one_input_link")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(One_and_only_one_input_link="self.outgoing->size() = 0 and self.incoming->size() = 1")
+@gmf.node(label="question", label.icon="true", color="227,198,244", border.color="0,0,0")
+class Question extends Task {
+  attr String[1] question;
+  @gmf.compartment(collapsible="true", layout="list")
+  val Answer[2..*] answers;
+}
+
+@Ecore(constraints="Answers_must_belong_to_Question One_and_only_one_output_link")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(Answers_must_belong_to_Question="self.oclContainer().oclIsTypeOf(Question)", One_and_only_one_output_link="self.incoming->size() = 0 and self.outgoing->size() = 1")
+@gmf.node(label="answer", label.pattern="- {0}", label.icon="false", color="227,198,244", border.color="0,0,0")
+class Answer extends Task {
+  attr String[1] answer;
+}
+
+@Ecore(constraints="Loops_have_one_and_only_one_input_link Loops_have_one_and_only_one_output_link Counter_Based_Loops_must_have_numIterations_greater_than_1")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(Loops_have_one_and_only_one_input_link="self.incoming->size() = 1", Loops_have_one_and_only_one_output_link="self.outgoing->size() = 1", Counter_Based_Loops_must_have_numIterations_greater_than_1="
+			self.type=LoopType::COUNTER_BASED implies numIterations>1")
+@gmf.node(label="name, type", label.pattern="{0}: {1}", label.icon="true", color="236,255,244", border.color="0,0,0")
+class Loop extends Task, Workflow {
+  attr LoopType[1] type;
+  attr int numIterations;
+}
+
+enum LoopType {
+  WHILE = 0;
+  DO_WHILE = 1;
+  COUNTER_BASED = 2;
+}
+
+

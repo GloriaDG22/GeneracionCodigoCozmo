@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/glori/eclipse/modeling-neon/plugins/org.eclipse.platform.doc.isv_4.6.2.v20170221-1001.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/glori/eclipse/modeling-neon/plugins/org.eclipse.platform.doc.user_4.6.1.v20160727-2009.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/glori/eclipse/modeling-neon/plugins/org.eclipse.platform.source_4.6.3.v20170301-0400.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

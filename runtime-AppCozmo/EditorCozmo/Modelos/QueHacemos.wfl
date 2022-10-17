@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow:Workflow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:catalogue="http://www.RoboTaskFlow.org/catalogue" xmlns:workflow="http://www.RoboTaskFlow.org/workflow" name="QueHacemos">
+  <tasks xsi:type="workflow:Initial" outgoing="//@links.0"/>
+  <tasks xsi:type="workflow:Final" incoming="//@links.5"/>
+  <tasks xsi:type="workflow:Final" incoming="//@tasks.5/@links.2"/>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.1" incoming="//@links.0" name="Saludar">
+    <parameters name="n_veces_SubirBrazos_Saludar" value="3">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.8/@paramsDefinitions.0"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:ComplexTask" href="../Catalogo/Inicial.cat#//@gathers.8"/>
+  </tasks>
+  <tasks xsi:type="workflow:Question" incoming="//@links.1" question="Que hacemos?">
+    <answers outgoing="//@links.2" answer="Jugar"/>
+    <answers outgoing="//@links.3" answer="Bailar"/>
+    <answers outgoing="//@links.4" answer="Foto"/>
+  </tasks>
+  <tasks xsi:type="workflow:Loop" outgoing="//@tasks.5/@links.2" incoming="//@links.8" name="Ambulancia" type="COUNTER_BASED" numIterations="6">
+    <tasks xsi:type="workflow:Activity" outgoing="//@tasks.5/@links.0" incoming="//@tasks.5/@links.3" name="ColorAzul">
+      <parameters name="n_luz_ColorAzul" value="2">
+        <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.7/@paramsDefinitions.0"/>
+      </parameters>
+      <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.7"/>
+    </tasks>
+    <tasks xsi:type="workflow:Final" incoming="//@tasks.5/@links.1"/>
+    <tasks xsi:type="workflow:Initial" outgoing="//@tasks.5/@links.3"/>
+    <tasks xsi:type="workflow:Activity" outgoing="//@tasks.5/@links.1" incoming="//@tasks.5/@links.0" name="ColorRojo">
+      <parameters name="n_luz_ColorRojo" value="0">
+        <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.7/@paramsDefinitions.0"/>
+      </parameters>
+      <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.7"/>
+    </tasks>
+    <links source="//@tasks.5/@tasks.0" target="//@tasks.5/@tasks.3"/>
+    <links source="//@tasks.5/@tasks.3" target="//@tasks.5/@tasks.1"/>
+    <links source="//@tasks.5" target="//@tasks.2"/>
+    <links source="//@tasks.5/@tasks.2" target="//@tasks.5/@tasks.0"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.9" incoming="//@links.3" name="SubirBrazos">
+    <parameters name="origen_SubirBrazos" value="5">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.1/@paramsDefinitions.0"/>
+    </parameters>
+    <parameters name="destino_SubirBrazos" value="3">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.1/@paramsDefinitions.1"/>
+    </parameters>
+    <parameters name="n_veces_SubirBrazos" value="1">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.1/@paramsDefinitions.2"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.1"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.5" incoming="//@links.4" name="HacerFoto">
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.6"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.8" incoming="//@links.2" name="Ambulancia">
+    <parameters name="text_Ambulancia" value="Soy una ambulancia, nino, nino.">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.0/@paramsDefinitions.0"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.0"/>
+  </tasks>
+  <tasks xsi:type="workflow:Loop" outgoing="//@tasks.9/@links.1" incoming="//@links.9" name="Gira" type="COUNTER_BASED" numIterations="3">
+    <tasks xsi:type="workflow:Final" incoming="//@links.7"/>
+    <tasks xsi:type="workflow:Activity" outgoing="//@links.6" incoming="//@tasks.9/@links.0" name="GirarAlante">
+      <parameters name="n_velocidad_GirarAlante" value="1">
+        <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.0"/>
+      </parameters>
+      <parameters name="tiempo_GirarAlante" value="2">
+        <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.1"/>
+      </parameters>
+      <parameters name="girar_GirarAlante" value="True">
+        <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.2"/>
+      </parameters>
+      <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.2"/>
+    </tasks>
+    <tasks xsi:type="workflow:Activity" outgoing="//@links.7" incoming="//@links.6" name="GirarAtras">
+      <parameters name="n_velocidad_GirarAtras" value="4">
+        <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.0"/>
+      </parameters>
+      <parameters name="tiempo_GirarAtras" value="3">
+        <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.1"/>
+      </parameters>
+      <parameters name="girar_GirarAtras" value="True">
+        <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.2"/>
+      </parameters>
+      <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.2"/>
+    </tasks>
+    <tasks xsi:type="workflow:Initial" outgoing="//@tasks.9/@links.0"/>
+    <links source="//@tasks.9/@tasks.3" target="//@tasks.9/@tasks.1"/>
+    <links source="//@tasks.9" target="//@tasks.10"/>
+  </tasks>
+  <tasks xsi:type="workflow:Final" incoming="//@tasks.9/@links.1"/>
+  <links source="//@tasks.0" target="//@tasks.3"/>
+  <links source="//@tasks.3" target="//@tasks.4"/>
+  <links source="//@tasks.4/@answers.0" target="//@tasks.8"/>
+  <links source="//@tasks.4/@answers.1" target="//@tasks.6"/>
+  <links source="//@tasks.4/@answers.2" target="//@tasks.7"/>
+  <links source="//@tasks.7" target="//@tasks.1"/>
+  <links source="//@tasks.9/@tasks.1" target="//@tasks.9/@tasks.2"/>
+  <links source="//@tasks.9/@tasks.2" target="//@tasks.9/@tasks.0"/>
+  <links source="//@tasks.8" target="//@tasks.5"/>
+  <links source="//@tasks.6" target="//@tasks.9"/>
+</workflow:Workflow>

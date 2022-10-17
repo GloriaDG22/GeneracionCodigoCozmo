@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
+  <gmfgraph:Canvas name="workflow">
+    <figures name="Default">
+      <figures xsi:type="gmfgraph:PolylineDecoration" name="LinkFigureTargetDecoration"/>
+      <descriptors name="ActivityFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ActivityFigure">
+          <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+          <preferredSize dx="130" dy="70"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ActivityLabelFigure" text="Activity"/>
+        </actualFigure>
+        <accessors accessor="getFigureActivityLabelFigure" figure="/0/@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="ParameterFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ParameterFigure">
+          <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+          <backgroundColor xsi:type="gmfgraph:RGBColor" red="144" green="187" blue="180"/>
+          <preferredSize dx="130" dy="30"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ParameterLabelFigure" text="Parameter"/>
+        </actualFigure>
+        <accessors accessor="getFigureParameterLabelFigure" figure="/0/@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="InitialFigure">
+        <actualFigure xsi:type="gmfgraph:SVGFigure" name="InitialFigure" documentURI="platform:/plugin/RoboTaskFlow/images/Initial.svg">
+          <preferredSize dx="70" dy="70"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+        </actualFigure>
+      </descriptors>
+      <descriptors name="FinalFigure">
+        <actualFigure xsi:type="gmfgraph:SVGFigure" name="FinalFigure" documentURI="platform:/plugin/RoboTaskFlow/images/Final.svg">
+          <preferredSize dx="70" dy="70"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+        </actualFigure>
+      </descriptors>
+      <descriptors name="QuestionFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="QuestionFigure">
+          <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+          <backgroundColor xsi:type="gmfgraph:RGBColor" red="227" green="198" blue="244"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="QuestionLabelFigure" text="Question">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="QuestionAnswersCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureQuestionLabelFigure" figure="/0/@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+        <accessors accessor="getQuestionAnswersCompartmentFigure" figure="/0/@figures.0/@descriptors.4/@actualFigure/@children.1"/>
+      </descriptors>
+      <descriptors name="AnswerFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AnswerFigure">
+          <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+          <backgroundColor xsi:type="gmfgraph:RGBColor" red="227" green="198" blue="244"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="AnswerLabelFigure" text="Answer"/>
+        </actualFigure>
+        <accessors accessor="getFigureAnswerLabelFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="LoopFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="LoopFigure">
+          <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+          <backgroundColor xsi:type="gmfgraph:RGBColor" red="236" green="255" blue="244"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="LoopLabelFigure" text="Loop">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="LoopTasksCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureLoopLabelFigure" figure="/0/@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+        <accessors accessor="getLoopTasksCompartmentFigure" figure="/0/@figures.0/@descriptors.6/@actualFigure/@children.1"/>
+      </descriptors>
+      <descriptors name="LinkFigure">
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="LinkFigure" targetDecoration="/0/@figures.0/@figures.0">
+          <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        </actualFigure>
+      </descriptors>
+    </figures>
+    <nodes name="Activity" figure="ActivityFigure">
+      <facets xsi:type="gmfgraph:DefaultSizeFacet">
+        <defaultSize dx="130" dy="70"/>
+      </facets>
+    </nodes>
+    <nodes name="Parameter" figure="ParameterFigure" affixedParentSide="NORTH">
+      <facets xsi:type="gmfgraph:DefaultSizeFacet">
+        <defaultSize dx="130" dy="30"/>
+      </facets>
+    </nodes>
+    <nodes name="Initial" figure="InitialFigure">
+      <facets xsi:type="gmfgraph:DefaultSizeFacet">
+        <defaultSize dx="70" dy="70"/>
+      </facets>
+    </nodes>
+    <nodes name="Final" figure="FinalFigure">
+      <facets xsi:type="gmfgraph:DefaultSizeFacet">
+        <defaultSize dx="70" dy="70"/>
+      </facets>
+    </nodes>
+    <nodes name="Question" figure="QuestionFigure"/>
+    <nodes name="Answer" figure="AnswerFigure"/>
+    <nodes name="Loop" figure="LoopFigure"/>
+    <connections name="Link" figure="LinkFigure"/>
+    <compartments name="QuestionAnswersCompartment" figure="QuestionFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.4/@accessors.1"/>
+    <compartments name="LoopTasksCompartment" figure="LoopFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.6/@accessors.1"/>
+    <labels name="ActivityLabel" figure="ActivityFigure" accessor="/0/@figures.0/@descriptors.0/@accessors.0"/>
+    <labels name="ParameterLabel" figure="ParameterFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.1/@accessors.0"/>
+    <labels name="QuestionLabel" figure="QuestionFigure" accessor="/0/@figures.0/@descriptors.4/@accessors.0"/>
+    <labels name="AnswerLabel" figure="AnswerFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.5/@accessors.0"/>
+    <labels name="LoopLabel" figure="LoopFigure" accessor="/0/@figures.0/@descriptors.6/@accessors.0"/>
+  </gmfgraph:Canvas>
+  <gmfgraph:Label name="InitialLabelFigure" text="Initial"/>
+  <gmfgraph:Label name="FinalLabelFigure" text="Final"/>
+</xmi:XMI>

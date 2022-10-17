@@ -1,0 +1,28 @@
+[comment encoding = UTF-8 /]
+[module generateImports('http://www.RoboTaskFlow.org/workflow', 'http://www.RoboTaskFlow.org/catalogue')]
+
+[template public generateImports(aWorkflow : Workflow)]
+[comment import general/]
+import pycozmo
+import time
+
+[comment import Tareas simples y las complejas que tenga el workflow/]
+import TareasGenericas as mycozmo
+[for (aTask:Task | aWorkflow.tasks)]
+	[if(aTask.oclIsTypeOf(Activity))]
+		[if(aTask.oclAsType(Activity).taskDefinition.oclIsTypeOf(ComplexTask))]
+from [aTask.oclAsType(Activity).taskDefinition.oclAsType(ComplexTask).name/] import *
+		[/if]
+	[elseif(aTask.oclIsTypeOf(Loop))]
+		[for (aTaskLoop:Task | aTask.oclAsType(Loop).tasks)]
+			[if(aTaskLoop.oclIsTypeOf(Activity))]
+			[if(aTaskLoop.oclAsType(Activity).taskDefinition.oclIsTypeOf(ComplexTask))]
+from [aTaskLoop.oclAsType(Activity).taskDefinition.oclAsType(ComplexTask).name/] import *
+			[/if][/if]
+		[/for]
+	[/if]
+[/for]
+
+[comment import para la interfaz/]
+import tkinter as tk
+[/template]

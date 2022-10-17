@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow:Workflow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:catalogue="http://www.RoboTaskFlow.org/catalogue" xmlns:workflow="http://www.RoboTaskFlow.org/workflow" name="SaludarYAndar">
+  <tasks xsi:type="workflow:Initial" outgoing="//@links.2"/>
+  <tasks xsi:type="workflow:Final" incoming="//@links.1"/>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.0" incoming="//@links.3" name="Contento">
+    <parameters name="n_sentimiento_Contento" value="3">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.4/@paramsDefinitions.0"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.4"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.1" incoming="//@links.0" name="Andar">
+    <parameters name="n_velocidad_Andar" value="2">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.0"/>
+    </parameters>
+    <parameters name="tiempo_Andar" value="2">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.1"/>
+    </parameters>
+    <parameters name="girar_Andar" value="True">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.2/@paramsDefinitions.2"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:SimpleTask" href="../Catalogo/Inicial.cat#//@gathers.2"/>
+  </tasks>
+  <tasks xsi:type="workflow:Activity" outgoing="//@links.3" incoming="//@links.2" name="Saludar">
+    <parameters name="n_veces_SubirBrazos_Saludar" value="4">
+      <paramDefinition href="../Catalogo/Inicial.cat#//@gathers.8/@paramsDefinitions.0"/>
+    </parameters>
+    <taskDefinition xsi:type="catalogue:ComplexTask" href="../Catalogo/Inicial.cat#//@gathers.8"/>
+  </tasks>
+  <links source="//@tasks.2" target="//@tasks.3"/>
+  <links source="//@tasks.3" target="//@tasks.1"/>
+  <links source="//@tasks.0" target="//@tasks.4"/>
+  <links source="//@tasks.4" target="//@tasks.2"/>
+</workflow:Workflow>

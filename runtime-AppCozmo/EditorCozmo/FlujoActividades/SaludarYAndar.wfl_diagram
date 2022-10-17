@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:workflow="http://www.RoboTaskFlow.org/workflow" xmi:id="_TuBeAEMTEe2fCL5LKjlo4w" type="Workflow" name="SaludarYAndar.wfl_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_VOtNoEMTEe2fCL5LKjlo4w" type="2003" fontName="Segoe UI">
+    <element xmi:type="workflow:Initial" href="../Modelos/SaludarYAndar.wfl#//@tasks.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VOtNoUMTEe2fCL5LKjlo4w" x="-12" y="84"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_VmNusEMTEe2fCL5LKjlo4w" type="2004" fontName="Segoe UI">
+    <element xmi:type="workflow:Final" href="../Modelos/SaludarYAndar.wfl#//@tasks.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VmNusUMTEe2fCL5LKjlo4w" x="780" y="84"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_YUM-8EMTEe2fCL5LKjlo4w" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_YUM-9UMTEe2fCL5LKjlo4w" type="5008"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_YUM-8UMTEe2fCL5LKjlo4w"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_YUM-8kMTEe2fCL5LKjlo4w" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_YUM-80MTEe2fCL5LKjlo4w"/>
+    <element xmi:type="workflow:Activity" href="../Modelos/SaludarYAndar.wfl#//@tasks.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YUM-9EMTEe2fCL5LKjlo4w" x="324" y="84"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_axuxUEMTEe2fCL5LKjlo4w" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_axuxVUMTEe2fCL5LKjlo4w" type="5008"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_axuxUUMTEe2fCL5LKjlo4w"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_axuxUkMTEe2fCL5LKjlo4w" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_axuxU0MTEe2fCL5LKjlo4w"/>
+    <element xmi:type="workflow:Activity" href="../Modelos/SaludarYAndar.wfl#//@tasks.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_axuxVEMTEe2fCL5LKjlo4w" x="612" y="84"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_QxvEQEi_Ee2eF7lEQOiIbw" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_QxvrUEi_Ee2eF7lEQOiIbw" type="5008"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_QxvEQUi_Ee2eF7lEQOiIbw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_QxvEQki_Ee2eF7lEQOiIbw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_QxvEQ0i_Ee2eF7lEQOiIbw"/>
+    <element xmi:type="workflow:Activity" href="../Modelos/SaludarYAndar.wfl#//@tasks.4"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QxvEREi_Ee2eF7lEQOiIbw" x="144" y="84"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_TuBeAUMTEe2fCL5LKjlo4w"/>
+  <element xmi:type="workflow:Workflow" href="../Modelos/SaludarYAndar.wfl#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_-FbysEMXEe2fCL5LKjlo4w" type="4001" source="_YUM-8EMTEe2fCL5LKjlo4w" target="_axuxUEMTEe2fCL5LKjlo4w">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_-FbysUMXEe2fCL5LKjlo4w"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_-FbyskMXEe2fCL5LKjlo4w" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/SaludarYAndar.wfl#//@links.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-Fbys0MXEe2fCL5LKjlo4w" points="[65, -5, -223, 7]$[281, -47, -7, -35]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="__G-vQEMXEe2fCL5LKjlo4w" type="4001" source="_axuxUEMTEe2fCL5LKjlo4w" target="_VmNusEMTEe2fCL5LKjlo4w">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="__G-vQUMXEe2fCL5LKjlo4w"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="__G-vQkMXEe2fCL5LKjlo4w" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/SaludarYAndar.wfl#//@links.1"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__G-vQ0MXEe2fCL5LKjlo4w" points="[65, 1, -73, 1]$[103, 1, -35, 1]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_XTikYEi_Ee2eF7lEQOiIbw" type="4001" source="_VOtNoEMTEe2fCL5LKjlo4w" target="_QxvEQEi_Ee2eF7lEQOiIbw">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_XTikYUi_Ee2eF7lEQOiIbw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_XTikYki_Ee2eF7lEQOiIbw" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/SaludarYAndar.wfl#//@links.2"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XTikY0i_Ee2eF7lEQOiIbw" points="[35, 6, -124, -15]$[107, -14, -52, -35]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_Xs4RcEi_Ee2eF7lEQOiIbw" type="4001" source="_QxvEQEi_Ee2eF7lEQOiIbw" target="_YUM-8EMTEe2fCL5LKjlo4w">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_Xs4RcUi_Ee2eF7lEQOiIbw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Xs4Rcki_Ee2eF7lEQOiIbw" fontName="Segoe UI"/>
+    <element xmi:type="workflow:Link" href="../Modelos/SaludarYAndar.wfl#//@links.3"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Xs4Rc0i_Ee2eF7lEQOiIbw" points="[65, -10, -118, 11]$[248, -28, 65, -7]"/>
+  </edges>
+</notation:Diagram>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="catalogue" nsURI="http://www.RoboTaskFlow.org/catalogue" nsPrefix="catalogue">
+  <eAnnotations source="gmf"/>
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="workflow_0" value="Workflow.ecore#/"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Catalogue">
+    <eAnnotations source="gmf.diagram"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TaskDefinitions_must_have_unique_names"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="TaskDefinitions_must_have_unique_names" value="self.gathers->isUnique(name)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gathers" upperBound="-1"
+        eType="#//TaskDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskDefinition" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ParameterDefinitions_of_a_TaskDefinition_must_have_unique_names"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="ParameterDefinitions_of_a_TaskDefinition_must_have_unique_names"
+          value="self.paramsDefinitions->isUnique(name)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paramsDefinitions" upperBound="-1"
+        eType="#//ParameterDefinition" containment="true">
+      <eAnnotations source="gmf.affixed"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleTask" eSuperTypes="#//TaskDefinition">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="size" value="130,70"/>
+      <details key="border.color" value="0,0,0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexTask" eSuperTypes="#//TaskDefinition">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="size" value="170,70"/>
+      <details key="color" value="200,200,200"/>
+      <details key="border.color" value="0,0,0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workflow" lowerBound="1"
+        eType="ecore:EClass Workflow.ecore#//Workflow"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterDefinition">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="size" value="120,30"/>
+      <details key="color" value="144,187,180"/>
+      <details key="border.color" value="0,0,0"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Simple_Tasks_parameters_are_not_bound_to_a_workflow_parameter Complex_Tasks_parameters_must_be_bound_to_one_parameter Complex_Tasks_params_are_bound_to_a_parameter_of_its_associated_workflow"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Simple_Tasks_parameters_are_not_bound_to_a_workflow_parameter"
+          value="&#xA;&#x9;&#x9;&#x9;self.oclContainer().oclIsTypeOf(SimpleTask) implies self.boundTo->size()=0"/>
+      <details key="Complex_Tasks_parameters_must_be_bound_to_one_parameter" value="&#xA;&#x9;&#x9;&#x9;self.oclContainer().oclIsTypeOf(ComplexTask) implies self.boundTo->size()=1"/>
+      <details key="Complex_Tasks_params_are_bound_to_a_parameter_of_its_associated_workflow"
+          value="&#xA;&#x9;&#x9;&#x9;self.oclContainer().oclIsTypeOf(ComplexTask) implies &#xA;&#x9;&#x9;&#x9;&#x9;self.boundTo.oclContainer().oclContainer() = self.oclContainer().oclAsType(ComplexTask).workflow"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ParameterType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundTo" eType="ecore:EClass Workflow.ecore#//Parameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ParameterType">
+    <eLiterals name="NUMBER"/>
+    <eLiterals name="BOOLEAN" value="1"/>
+    <eLiterals name="STRING" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>
