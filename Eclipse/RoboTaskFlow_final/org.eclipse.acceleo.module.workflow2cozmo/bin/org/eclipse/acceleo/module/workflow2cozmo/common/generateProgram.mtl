@@ -1,0 +1,67 @@
+[comment encoding = UTF-8 /]
+[module generateProgram('http://www.RoboTaskFlow.org/workflow', 'http://www.RoboTaskFlow.org/catalogue')]
+
+[import org::eclipse::acceleo::module::workflow2cozmo::common::generateParameters/]
+[import org::eclipse::acceleo::module::workflow2cozmo::common::generateParametersInterfaz/]
+[import org::eclipse::acceleo::module::workflow2cozmo::common::generateTarea/]
+[import org::eclipse::acceleo::module::workflow2cozmo::common::generateMain/]
+
+[template public generateProgram(aWorkflow : Workflow)]
+[comment Import general/]
+import pycozmo
+import time
+
+[comment Imports de las tareas simples y las complejas que tenga el workflow/]
+import TareasGenericas as mycozmo
+[for (aTask:Task | aWorkflow.tasks)]
+	[if(aTask.oclIsTypeOf(Activity))]
+		[if(aTask.oclAsType(Activity).taskDefinition.oclIsTypeOf(ComplexTask))]
+from [aTask.oclAsType(Activity).taskDefinition.oclAsType(ComplexTask).name/] import *
+		[/if]
+	[elseif(aTask.oclIsTypeOf(Loop))]
+		[for (aTaskLoop:Task | aTask.oclAsType(Loop).tasks)]
+			[if(aTaskLoop.oclIsTypeOf(Activity))]
+			[if(aTaskLoop.oclAsType(Activity).taskDefinition.oclIsTypeOf(ComplexTask))]
+from [aTaskLoop.oclAsType(Activity).taskDefinition.oclAsType(ComplexTask).name/] import *
+			[/if][/if]
+		[/for]
+	[/if]
+[/for]
+
+[comment Import para la interfaz/]
+import tkinter as tk
+
+[comment Llamada del metodo que contiende todo el flujo de actividades/]
+def [aWorkflow.name.toLowerFirst()/](cli[aWorkflow.tasks.generateParameters()/]):
+[comment Llamada a las tareas del flujo/]
+[aWorkflow.tasks.generateMetodos()/]
+
+[comment Main del programa/]
+[generateMain(aWorkflow)/]
+[/template]
+
+[template public generateMetodos(aTask : Task)]
+[/template]
+
+[template public generateMetodos(aInitial : Initial)]
+[comment Genera la siguiente tarea a la inicial. Es el comienzo del código./]
+[generateTarea(aInitial.outgoing.target)/]
+[/template]
+
+[template public generateMetodos(aLoop : Loop)]
+[if(not (aLoop.type = LoopType::COUNTER_BASED))]
+[comment Metodo que llama a las tareas de dentro del bucle. Es llamado en la interfaz/]
+def do[aLoop.name/]([generateParametersLoop(aLoop)/]):
+    [aLoop.tasks.generateMetodos()/]
+[/if]
+[/template]
+
+[template public generateMetodos(aQuestion : Question)]
+[comment Metodo que llama a las tareas de cada respuesta en las preguntas. Es llamado en la interfaz/]
+[for(anAnswer:Answer | aQuestion.answers)]
+def action[anAnswer.answer/][i/](ventanaQ[generateParametersInterfaz(anAnswer.outgoing.target)/]):
+[generateTarea(anAnswer.outgoing.target)/]
+    ventanaQ.quit()
+
+[/for]
+[/template]

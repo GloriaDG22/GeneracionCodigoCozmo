@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="generateMain" nsURI="org::eclipse::acceleo::module::workflow2cozmo::common::generateMain" startHeaderPosition="29" endHeaderPosition="328">
+  <mtl:Module name="generateMain" nsURI="org::eclipse::acceleo::module::workflow2cozmo::common::generateMain" startHeaderPosition="29" endHeaderPosition="327">
     <input>
       <takesTypesFrom href="http://www.RoboTaskFlow.org/workflow#/"/>
     </input>
@@ -110,59 +110,59 @@
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/generateMain">
-      <details key="start" value="134"/>
-      <details key="end" value="1154"/>
-      <details key="line" value="5"/>
+      <details key="start" value="133"/>
+      <details key="end" value="1153"/>
+      <details key="line" value="4"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateMain/%">
-      <details key="start" value="187"/>
-      <details key="end" value="301"/>
-      <details key="line" value="6"/>
+      <details key="start" value="186"/>
+      <details key="end" value="300"/>
+      <details key="line" value="5"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generateMain/%.1">
-      <details key="start" value="331"/>
-      <details key="end" value="505"/>
-      <details key="line" value="9"/>
+      <details key="start" value="330"/>
+      <details key="end" value="504"/>
+      <details key="line" value="8"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/generateMain/%.2">
-      <details key="start" value="533"/>
-      <details key="end" value="747"/>
-      <details key="line" value="16"/>
+      <details key="start" value="532"/>
+      <details key="end" value="746"/>
+      <details key="line" value="15"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/generateMain/%.3">
-      <details key="start" value="776"/>
-      <details key="end" value="868"/>
-      <details key="line" value="21"/>
+      <details key="start" value="775"/>
+      <details key="end" value="867"/>
+      <details key="line" value="20"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/generateMain/%.4">
-      <details key="start" value="869"/>
-      <details key="end" value="898"/>
+      <details key="start" value="868"/>
+      <details key="end" value="897"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/generateMain/%.4/%">
-      <details key="start" value="869"/>
-      <details key="end" value="883"/>
+      <details key="start" value="868"/>
+      <details key="end" value="882"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/generateMain/%.4/%/aWorkflow">
-      <details key="start" value="869"/>
-      <details key="end" value="878"/>
+      <details key="start" value="868"/>
+      <details key="end" value="877"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/generateMain/%.5">
-      <details key="start" value="900"/>
-      <details key="end" value="908"/>
-      <details key="line" value="22"/>
+      <details key="start" value="899"/>
+      <details key="end" value="907"/>
+      <details key="line" value="21"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/generateMain/%.6">
-      <details key="start" value="939"/>
-      <details key="end" value="1142"/>
-      <details key="line" value="25"/>
+      <details key="start" value="938"/>
+      <details key="end" value="1141"/>
+      <details key="line" value="24"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/generateMain/aWorkflow">
-      <details key="start" value="164"/>
-      <details key="end" value="184"/>
-      <details key="line" value="5"/>
+      <details key="start" value="163"/>
+      <details key="end" value="183"/>
+      <details key="line" value="4"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>

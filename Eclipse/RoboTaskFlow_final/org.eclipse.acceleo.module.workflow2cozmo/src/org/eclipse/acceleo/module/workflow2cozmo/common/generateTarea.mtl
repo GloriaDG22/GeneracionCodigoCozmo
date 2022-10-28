@@ -1,0 +1,103 @@
+[comment encoding = UTF-8 /]
+[module generateTarea('http://www.RoboTaskFlow.org/workflow', 'http://www.RoboTaskFlow.org/catalogue')]
+
+[import org::eclipse::acceleo::module::workflow2cozmo::common::generateParametersInterfaz/]
+
+[template public generateTarea(aTask : Task)]
+[/template]
+
+[template public generateTarea(anActivity : Activity)]
+    '''-------------[anActivity.name/] - [anActivity.taskDefinition.name.toUpperCase()/]-------------'''
+[comment Codigo de la llamada a la tarea/]
+[if(anActivity.taskDefinition.oclIsTypeOf(ComplexTask))]
+    [anActivity.taskDefinition.name.toLowerFirst()/](cli[for (aParam:Parameter | anActivity.parameters)before(', ') separator(', ')][aParam.paramDefinition.name/]=[aParam.name/][/for]) [comment tarea compleja/]
+
+[else]
+    mycozmo.[anActivity.taskDefinition.name.toLowerFirst()/](cli[for (aParam:Parameter | anActivity.parameters)before(', ') separator(', ') ][aParam.name/][/for]) [comment tarea simple/]
+
+[/if]
+[generateTarea(anActivity.outgoing.target)/]
+[/template]
+
+[template public generateTarea(aQuestion : Question)]
+    '''------------------------[aQuestion.question/] - QUESTION------------------------------'''
+[comment Crear interfaz/] 
+    text_label = "[aQuestion.question/]"
+    mycozmo.hablar(cli, text_label)
+
+    ventanaQ=tk.Tk()
+    #set center screen window with following coordination
+    MyLeftPos = (ventanaQ.winfo_screenwidth() - 400) / 2
+    myTopPos = (ventanaQ.winfo_screenheight() - 400) / 2
+    ventanaQ.geometry( "%dx%d+%d+%d" % (400, 400, MyLeftPos, myTopPos))
+
+    ventanaQ.title("Interfaz Cozmo") 
+
+    lbl = tk.Label(ventanaQ, text=text_label, font=("Arial Bold", 14))
+    lbl.pack(pady=15)
+
+[comment Crear un boton por cada respuesta/] 
+[for(anAnswer:Answer | aQuestion.answers)]
+    answer[i/] = "[anAnswer.answer/]"
+    boton[i/]=tk.Button(ventanaQ, text=answer[i/], bg="#82c9dd", width = 9, font = ("Bold"),
+            command=lambda: action[anAnswer.answer/][i/](ventanaQ[generateParametersInterfaz(anAnswer.outgoing.target)/]))
+    boton[i/].pack(pady=10)
+[/for]
+
+    mycozmo.hablar(cli, [for(anAnswer:Answer | aQuestion.answers) separator(' + " o " + ')]answer[i/][/for])
+
+    ventanaQ.mainloop()
+
+[/template]
+
+[template public generateTarea(aLoop : Loop)]
+    '''------------------------[aLoop.name/] - [aLoop.type/]------------------------------'''
+[comment WHILE o DO_WHILE: asigna variables para la interfaz/] 
+
+[comment WHILE/] 
+[if(aLoop.type = LoopType::WHILE)]
+    text_label="Hacemos la actividad [aLoop.name/]?"
+    mycozmo.hablar(cli, text_label)
+[comment DO_WHILE: hace la primera iteracion y luego pregunta/] 
+[elseif(aLoop.oclAsType(Loop).type = LoopType::DO_WHILE)]
+	[for (aTask:Task | aLoop.tasks)]
+		[if(aTask.oclIsTypeOf(Initial))]
+[generateTarea(aTask.outgoing.target)/]
+		[/if]
+	[/for]
+    text_label="Repetimos [aLoop.name/]?"
+    mycozmo.hablar(cli, text_label)
+[/if]
+
+[comment COUNTER_BASED o los otros tipos/]
+[comment COUNTER_BASED: crea un for con el numero de iteraciones indicadas/]
+[if(aLoop.type = LoopType::COUNTER_BASED)]
+    for i in range([aLoop.numIterations/]):
+	[for (aTask:Task | aLoop.tasks)]
+		[if(aTask.oclIsTypeOf(Initial))]
+    [generateTarea(aTask.outgoing.target)/]
+		[/if]
+	[/for]
+[else] [comment WHILE o DO_WHILE: crea la interfaz/]
+    ventana=tk.Tk()
+    #set center screen window with following coordination
+    MyLeftPos = (ventana.winfo_screenwidth() - 400) / 2
+    myTopPos = (ventana.winfo_screenheight() - 200) / 2
+    ventana.geometry( "%dx%d+%d+%d" % (400, 200, MyLeftPos, myTopPos))
+
+    ventana.title("Interfaz Cozmo") 
+
+    lbl = tk.Label(ventana, text=text_label, font=("Arial Bold", 14))
+    lbl.pack(pady=15)
+
+    boton1=tk.Button(ventana, text="SI", bg="#6ce238", width = 9, font = ("Bold"),
+            command=lambda: do[aLoop.name/]([generateParametersLoop(aLoop)/]))
+    boton1.pack(side=tk.LEFT, padx=45, pady=20)
+    boton2=tk.Button(ventana, text="NO", bg="#ff5649", width = 9, font = ("Bold"),
+            command=ventana.quit)
+    boton2.pack(side=tk.RIGHT, padx=45, pady=20)
+    ventana.mainloop()
+
+[/if]
+[generateTarea(aLoop.outgoing.target)/]
+[/template]

@@ -1,8 +1,11 @@
 [comment encoding = UTF-8 /]
 [module generateParameters('http://www.RoboTaskFlow.org/workflow', 'http://www.RoboTaskFlow.org/catalogue')]
 
+[template public generateParameters(aTask : Task)]
+[/template]
+
 [template public generateParameters(aActivity : Activity)]
-[comment asignacion de parametros/]
+[comment Asignacion de parametros/]
 [for (aParam:Parameter | aActivity.parameters)before (', ') separator(', ')]
 	[if(aParam.paramDefinition.type = ParameterType::STRING)]
 [aParam.name/] = "[aParam.value/]"
@@ -18,4 +21,10 @@
 [aParam.name/] = [aParam.value/]
 	[/if]
 [/for]
+
+[/template]
+
+[template public generateParameters(aLoop : Loop)]
+[comment Recorre todas las tareas del bucle/]
+[aLoop.tasks.generateParameters()/]
 [/template]
